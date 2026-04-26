@@ -1,0 +1,18 @@
+INSERT INTO public."todo" (
+	"organ",
+	"pr",
+	"dat_hre",
+	"todo",
+	"infos",
+	"site_web",
+	"email",
+	"isdone")
+VALUES (
+	'{{insert_form.formData.organ}}',
+	'{{insert_form.formData.pr}}',
+	'{{insert_form.formData.dat_hre}}',
+	'{{insert_form.formData.todo}}',
+	'{{insert_form.formData.infos}}',
+	'{{insert_form.formData.site_web}}',
+	'{{insert_form.formData.email}}',
+	'{{insert_form.formData.isdone}}');

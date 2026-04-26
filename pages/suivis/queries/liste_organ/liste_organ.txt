@@ -1,0 +1,6 @@
+SELECT 'Tous' as label, '' as value
+UNION ALL
+(SELECT DISTINCT organ as label, organ as value 
+ FROM public.todo 
+ WHERE organ IS NOT NULL AND organ != ''
+ ORDER BY organ ASC);

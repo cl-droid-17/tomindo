@@ -1,0 +1,10 @@
+UPDATE public."todo" SET
+		"organ" = '{{update_form.fieldState.organ.isVisible ? update_form.formData.organ : update_form.sourceData.organ}}',
+		"pr" = '{{update_form.fieldState.pr.isVisible ? update_form.formData.pr : update_form.sourceData.pr}}',
+    "dat_hre" = '{{update_form.fieldState.dat_hre.isVisible ? update_form.formData.dat_hre : update_form.sourceData.dat_hre}}',
+		"todo" = '{{update_form.fieldState.todo.isVisible ? update_form.formData.todo : update_form.sourceData.todo}}',
+		"infos" = '{{update_form.fieldState.infos.isVisible ? update_form.formData.infos : update_form.sourceData.infos}}',
+		"site_web" = '{{update_form.fieldState.site_web.isVisible ? update_form.formData.site_web : update_form.sourceData.site_web}}',
+		"email" = '{{update_form.fieldState.email.isVisible ? update_form.formData.email : update_form.sourceData.email}}',
+		"isdone" = '{{update_form.fieldState.isdone.isVisible ? update_form.formData.isdone : update_form.sourceData.isdone}}'
+WHERE "id" = {{data_table.selectedRow.id}};

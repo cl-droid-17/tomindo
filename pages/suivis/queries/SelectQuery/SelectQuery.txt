@@ -1,0 +1,2 @@
+SELECT * FROM public."todo"
+ORDER BY "pr" ASC;
