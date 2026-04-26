@@ -506,7 +506,7 @@
   "rightColumn": 64,
   "searchKey": "",
   "serverSidePaginationEnabled": false,
-  "tableData": "{{ \n  SelectQuery.data.filter(row => {\n    // 1. Filtre par le menu déroulant (Organisme)\n    const choixOrgan = filtre_organ.selectedOptionValue;\n    const passeOrgan = !choixOrgan || choixOrgan === \"\" || row.organ === choixOrgan;\n    \n    // 2. Filtre par la barre de recherche de la table (Search Text)\n    const texteRecherche = data_table.searchText.toLowerCase();\n    const passeRecherche = !texteRecherche || \n                           row.organ.toLowerCase().includes(texteRecherche) || \n                           row.titre.toLowerCase().includes(texteRecherche); // Optionnel: cherche aussi dans le titre\n\n    return passeOrgan && passeRecherche;\n  }) \n}}",
+  "tableData": "{{ OutilsFiltres.filtrerDonnees() }}",
   "textSize": "0.875rem",
   "topRow": 6,
   "totalRecordsCount": 0,
