@@ -285,7 +285,7 @@
           "children": {},
           "dataType": "string",
           "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.infos))(insert_form.sourceData, insert_form.formData, insert_form.fieldState)}}",
-          "fieldType": "Text Input",
+          "fieldType": "Multiline Text Input",
           "iconAlign": "left",
           "identifier": "infos",
           "isCustomField": false,

@@ -134,9 +134,6 @@
       "key": "schema.__root_schema__.children.pr.accentColor"
     },
     {
-      "key": "schema.__root_schema__.children.dat_hre.defaultValue"
-    },
-    {
       "key": "schema.__root_schema__.children.dat_hre.borderRadius"
     },
     {
@@ -192,6 +189,9 @@
     },
     {
       "key": "schema.__root_schema__.children.isdone.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.dat_hre.defaultValue"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -210,6 +210,9 @@
     },
     {
       "key": "schema.__root_schema__.children.isdone.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.dat_hre.defaultValue"
     }
   ],
   "dynamicTriggerPathList": [
@@ -261,7 +264,7 @@
           "convertToISO": true,
           "dataType": "string",
           "dateFormat": "DD/MM/YYYY HH:mm",
-          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.dat_hre))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
+          "defaultValue": "{{((sourceData, formData, fieldState) => ( data_table.selectedRow.dat_hre ))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
           "fieldType": "Datepicker",
           "identifier": "dat_hre",
           "isCustomField": false,
@@ -384,7 +387,7 @@
           "labelTextSize": "0.875rem",
           "originalIdentifier": "pr",
           "position": 2,
-          "sourceData": 1
+          "sourceData": 5
         },
         "site_web": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
