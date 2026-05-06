@@ -1,0 +1,18 @@
+INSERT INTO public."passw" (
+	"domaine",
+	"site",
+	"groupe",
+	"categorie",
+	"user_id",
+	"user_mail",
+	"passw",
+	"two_fa")
+VALUES (
+	'{{insert_form.formData.domaine}}',
+	'{{insert_form.formData.site}}',
+	'{{insert_form.formData.groupe}}',
+	'{{insert_form.formData.categorie}}',
+	'{{insert_form.formData.user_id}}',
+	'{{insert_form.formData.user_mail}}',
+	'{{insert_form.formData.passw}}',
+	'{{insert_form.formData.two_fa}}');

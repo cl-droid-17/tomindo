@@ -20,6 +20,10 @@
     {
       "id": "suivis",
       "isDefault": true
+    },
+    {
+      "id": "Codes Acces",
+      "isDefault": false
     }
   ],
   "unpublishedApplicationDetail": {

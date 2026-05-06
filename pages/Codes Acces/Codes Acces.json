@@ -1,12 +1,12 @@
 {
-  "gitSyncId": "69ed0fd70048d3547d91e0b2_add3ec10-d40b-4dd0-8d65-78fbebbbd6ab",
+  "gitSyncId": "69ed0fd70048d3547d91e0b2_42c52572-b589-473a-9fca-8fb7e4ce45e6",
   "unpublishedPage": {
     "isHidden": false,
     "layouts": [
       {
         "dsl": {
           "backgroundColor": "none",
-          "bottomRow": 870,
+          "bottomRow": 860,
           "canExtend": true,
           "containerStyle": "none",
           "detachFromLayout": true,
@@ -27,7 +27,7 @@
         }
       }
     ],
-    "name": "suivis",
-    "slug": "suivis"
+    "name": "Codes Acces",
+    "slug": "codes-acces"
   }
 }

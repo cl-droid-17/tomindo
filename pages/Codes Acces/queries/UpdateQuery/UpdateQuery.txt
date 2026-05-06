@@ -1,0 +1,10 @@
+UPDATE public."passw" SET
+		"domaine" = '{{update_form.fieldState.domaine.isVisible ? update_form.formData.domaine : update_form.sourceData.domaine}}',
+		"site" = '{{update_form.fieldState.site.isVisible ? update_form.formData.site : update_form.sourceData.site}}',
+    "groupe" = '{{update_form.fieldState.groupe.isVisible ? update_form.formData.groupe : update_form.sourceData.groupe}}',
+		"categorie" = '{{update_form.fieldState.categorie.isVisible ? update_form.formData.categorie : update_form.sourceData.categorie}}',
+		"user_id" = '{{update_form.fieldState.user_id.isVisible ? update_form.formData.user_id : update_form.sourceData.user_id}}',
+		"user_mail" = '{{update_form.fieldState.user_mail.isVisible ? update_form.formData.user_mail : update_form.sourceData.user_mail}}',
+		"passw" = '{{update_form.fieldState.passw.isVisible ? update_form.formData.passw : update_form.sourceData.passw}}',
+		"two_fa" = '{{update_form.fieldState.two_fa.isVisible ? update_form.formData.two_fa : update_form.sourceData.two_fa}}'
+WHERE "id" = {{data_table.selectedRow.id}};

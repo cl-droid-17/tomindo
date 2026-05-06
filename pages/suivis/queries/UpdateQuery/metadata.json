@@ -5,12 +5,12 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "UPDATE public.\"todo\" SET\n\t\t\"organ\" = '{{update_form.fieldState.organ.isVisible ? update_form.formData.organ : update_form.sourceData.organ}}',\n\t\t\"pr\" = '{{update_form.fieldState.pr.isVisible ? update_form.formData.pr : update_form.sourceData.pr}}',\n    \"dat_hre\" = '{{update_form.fieldState.dat_hre.isVisible ? update_form.formData.dat_hre : update_form.sourceData.dat_hre}}',\n\t\t\"todo\" = '{{update_form.fieldState.todo.isVisible ? update_form.formData.todo : update_form.sourceData.todo}}',\n\t\t\"infos\" = '{{update_form.fieldState.infos.isVisible ? update_form.formData.infos : update_form.sourceData.infos}}',\n\t\t\"site_web\" = '{{update_form.fieldState.site_web.isVisible ? update_form.formData.site_web : update_form.sourceData.site_web}}',\n\t\t\"email\" = '{{update_form.fieldState.email.isVisible ? update_form.formData.email : update_form.sourceData.email}}',\n\t\t\"isdone\" = '{{update_form.fieldState.isdone.isVisible ? update_form.formData.isdone : update_form.sourceData.isdone}}'\nWHERE \"id\" = {{data_table.selectedRow.id}};",
+      "body": "UPDATE public.\"todo\" SET\n\t\t\"organ\" = '{{update_form.fieldState.organ.isVisible ? update_form.formData.organ : update_form.sourceData.organ}}',\n\t\t\"pr\" = '{{update_form.fieldState.pr.isVisible ? update_form.formData.pr : update_form.sourceData.pr}}',\n    \"dat_hre\" = NULLIF('{{update_form.formData.dat_hre}}', '')::timestamp,\n\t\t\"todo\" = '{{update_form.fieldState.todo.isVisible ? update_form.formData.todo : update_form.sourceData.todo}}',\n\t\t\"infos\" = '{{update_form.fieldState.infos.isVisible ? update_form.formData.infos : update_form.sourceData.infos}}',\n\t\t\"site_web\" = '{{update_form.fieldState.site_web.isVisible ? update_form.formData.site_web : update_form.sourceData.site_web}}',\n\t\t\"email\" = '{{update_form.fieldState.email.isVisible ? update_form.formData.email : update_form.sourceData.email}}',\n\t\t\"isdone\" = '{{update_form.fieldState.isdone.isVisible ? update_form.formData.isdone : update_form.sourceData.isdone}}'\nWHERE \"id\" = {{data_table.selectedRow.id}};",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
         {
-          "value": true
+          "value": false
         }
       ],
       "timeoutInMillisecond": 10000
