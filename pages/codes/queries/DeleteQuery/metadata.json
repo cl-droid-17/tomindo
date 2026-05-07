@@ -1,6 +1,6 @@
 {
   "gitSyncId": "69ed0fd70048d3547d91e0b2_c473f090-c6f4-49a3-80cf-f421fccfada6",
-  "id": "Codes Acces_DeleteQuery",
+  "id": "codes_DeleteQuery",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
@@ -28,7 +28,7 @@
       }
     ],
     "name": "DeleteQuery",
-    "pageId": "Codes Acces",
+    "pageId": "codes",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }

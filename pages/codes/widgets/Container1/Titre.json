@@ -29,11 +29,11 @@
   "parentRowSpace": 10,
   "rightColumn": 54,
   "text": "Codes & Cie",
-  "textAlign": "LEFT",
-  "textColor": "#231F20",
+  "textAlign": "CENTER",
+  "textColor": "#3b82f6",
   "topRow": 1,
   "type": "TEXT_WIDGET",
   "version": 1,
   "widgetId": "urzv99hdc8",
-  "widgetName": "Text16"
+  "widgetName": "Titre"
 }

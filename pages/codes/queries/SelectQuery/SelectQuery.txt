@@ -1,0 +1,18 @@
+SELECT * FROM public."passw"
+WHERE 
+  -- 1. Filtre Groupe (ton widget Select)
+  ( '{{ !filtre_groupe.selectedOptionValue }}' = 'true' OR "groupe" = '{{ filtre_groupe.selectedOptionValue }}' )
+  
+  AND 
+  -- 2. Filtre Recherche (on cherche dans la colonne 'site')
+  ( '{{ !data_table.searchText }}' = 'true' OR "site" ILIKE '%{{ data_table.searchText }}%' )
+
+ORDER BY 
+  -- Tri dynamique :
+  -- Si on filtre (groupe ou recherche), on trie par "categorie" ASC
+  -- Sinon, on trie par priorité "pr" ASC par défaut
+  CASE 
+    WHEN '{{ !!filtre_groupe.selectedOptionValue || !!data_table.searchText }}' = 'true' 
+    THEN "categorie" 
+    ELSE "groupe"::text 
+  END ASC;

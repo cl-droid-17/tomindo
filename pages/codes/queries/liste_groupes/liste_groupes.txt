@@ -1,0 +1,6 @@
+SELECT 'Tous' as label, '' as value
+UNION ALL
+(SELECT DISTINCT groupe as label, groupe as value 
+ FROM public.passw 
+ WHERE groupe IS NOT NULL AND groupe != ''
+ ORDER BY groupe ASC);

@@ -1,6 +1,6 @@
 {
   "gitSyncId": "69ed0fd70048d3547d91e0b2_a1728926-4d94-4c48-8d15-54b0acff70c2",
-  "id": "Codes Acces_InsertQuery",
+  "id": "codes_InsertQuery",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
@@ -28,7 +28,7 @@
       }
     ],
     "name": "InsertQuery",
-    "pageId": "Codes Acces",
+    "pageId": "codes",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }

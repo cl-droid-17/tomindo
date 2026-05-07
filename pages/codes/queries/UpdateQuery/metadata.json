@@ -1,6 +1,6 @@
 {
   "gitSyncId": "69ed0fd70048d3547d91e0b2_faff6507-48b2-46db-a2f1-db58915cd9d8",
-  "id": "Codes Acces_UpdateQuery",
+  "id": "codes_UpdateQuery",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
@@ -28,7 +28,7 @@
       }
     ],
     "name": "UpdateQuery",
-    "pageId": "Codes Acces",
+    "pageId": "codes",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
