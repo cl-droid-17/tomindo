@@ -1,18 +1,21 @@
 SELECT * FROM public."passw"
 WHERE 
-  -- 1. Filtre Groupe (ton widget Select)
+  -- 1. Filtre par le menu déroulant (Groupe)
   ( '{{ !filtre_groupe.selectedOptionValue }}' = 'true' OR "groupe" = '{{ filtre_groupe.selectedOptionValue }}' )
   
   AND 
-  -- 2. Filtre Recherche (on cherche dans la colonne 'site')
-  ( '{{ !data_table.searchText }}' = 'true' OR "site" ILIKE '%{{ data_table.searchText }}%' )
+  -- 2. Filtre Recherche "Filet Large" (Groupe + Categorie)
+  ( 
+    '{{ !data_table.searchText }}' = 'true' 
+    OR "groupe" ILIKE '%{{ data_table.searchText }}%' 
+    OR "categorie" ILIKE '%{{ data_table.searchText }}%' 
+  )
 
 ORDER BY 
-  -- Tri dynamique :
-  -- Si on filtre (groupe ou recherche), on trie par "categorie" ASC
-  -- Sinon, on trie par priorité "pr" ASC par défaut
   CASE 
+    -- Si on filtre (recherche ou sélection), on regroupe par catégorie pour voir les accès similaires
     WHEN '{{ !!filtre_groupe.selectedOptionValue || !!data_table.searchText }}' = 'true' 
     THEN "categorie" 
-    ELSE "groupe"::text 
+    -- Par défaut, on garde ton premier repère : le Groupe
+    ELSE "groupe" 
   END ASC;

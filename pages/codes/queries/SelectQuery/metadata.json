@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT * FROM public.\"passw\"\nWHERE \n  -- 1. Filtre Groupe (ton widget Select)\n  ( '{{ !filtre_groupe.selectedOptionValue }}' = 'true' OR \"groupe\" = '{{ filtre_groupe.selectedOptionValue }}' )\n  \n  AND \n  -- 2. Filtre Recherche (on cherche dans la colonne 'site')\n  ( '{{ !data_table.searchText }}' = 'true' OR \"site\" ILIKE '%{{ data_table.searchText }}%' )\n\nORDER BY \n  -- Tri dynamique :\n  -- Si on filtre (groupe ou recherche), on trie par \"categorie\" ASC\n  -- Sinon, on trie par priorité \"pr\" ASC par défaut\n  CASE \n    WHEN '{{ !!filtre_groupe.selectedOptionValue || !!data_table.searchText }}' = 'true' \n    THEN \"categorie\" \n    ELSE \"groupe\"::text \n  END ASC;",
+      "body": "SELECT * FROM public.\"passw\"\nWHERE \n  -- 1. Filtre par le menu déroulant (Groupe)\n  ( '{{ !filtre_groupe.selectedOptionValue }}' = 'true' OR \"groupe\" = '{{ filtre_groupe.selectedOptionValue }}' )\n  \n  AND \n  -- 2. Filtre Recherche \"Filet Large\" (Groupe + Categorie)\n  ( \n    '{{ !data_table.searchText }}' = 'true' \n    OR \"groupe\" ILIKE '%{{ data_table.searchText }}%' \n    OR \"categorie\" ILIKE '%{{ data_table.searchText }}%' \n  )\n\nORDER BY \n  CASE \n    -- Si on filtre (recherche ou sélection), on regroupe par catégorie pour voir les accès similaires\n    WHEN '{{ !!filtre_groupe.selectedOptionValue || !!data_table.searchText }}' = 'true' \n    THEN \"categorie\" \n    -- Par défaut, on garde ton premier repère : le Groupe\n    ELSE \"groupe\" \n  END ASC;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
