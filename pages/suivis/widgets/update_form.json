@@ -134,6 +134,9 @@
       "key": "schema.__root_schema__.children.pr.accentColor"
     },
     {
+      "key": "schema.__root_schema__.children.dat_hre.defaultValue"
+    },
+    {
       "key": "schema.__root_schema__.children.dat_hre.borderRadius"
     },
     {
@@ -189,9 +192,6 @@
     },
     {
       "key": "schema.__root_schema__.children.isdone.accentColor"
-    },
-    {
-      "key": "schema.__root_schema__.children.dat_hre.defaultValue"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -228,7 +228,7 @@
   "isVisible": "{{!!data_table.selectedRow.id}}",
   "key": "h9l9ozr8op",
   "labelTextSize": "0.875rem",
-  "leftColumn": 47,
+  "leftColumn": 48,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "onSubmit": "{{UpdateQuery.run(() => SelectQuery.run(), (error) => showAlert(`Error while updating resource!\\n ${error}`,'error'))}}",
@@ -261,10 +261,10 @@
           "boxShadow": "none",
           "children": {},
           "closeOnSelection": false,
-          "convertToISO": true,
+          "convertToISO": false,
           "dataType": "string",
           "dateFormat": "DD/MM/YYYY HH:mm",
-          "defaultValue": "{{((sourceData, formData, fieldState) => ( data_table.selectedRow.dat_hre ))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
+          "defaultValue": "{{((sourceData, formData, fieldState) => ( data_table.selectedRow.dat_hre ? moment(data_table.selectedRow.dat_hre).set({ hour: moment().hour(), minute: moment().minute() }).format() : moment() ))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
           "fieldType": "Datepicker",
           "identifier": "dat_hre",
           "isCustomField": false,
@@ -276,7 +276,7 @@
           "maxDate": "2121-12-31T18:29:00.000Z",
           "minDate": "1920-12-31T18:30:00.000Z",
           "originalIdentifier": "dat_hre",
-          "position": 3,
+          "position": 2,
           "shortcuts": false,
           "sourceData": "",
           "timePrecision": "minute"
@@ -300,7 +300,7 @@
           "label": "Email",
           "labelTextSize": "0.875rem",
           "originalIdentifier": "email",
-          "position": 8,
+          "position": 7,
           "sourceData": ""
         },
         "infos": {
@@ -311,7 +311,7 @@
           "children": {},
           "dataType": "string",
           "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.infos))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
-          "fieldType": "Multiline Text Input",
+          "fieldType": "Text Input",
           "iconAlign": "left",
           "identifier": "infos",
           "isCustomField": false,
@@ -322,7 +322,7 @@
           "label": "Infos",
           "labelTextSize": "0.875rem",
           "originalIdentifier": "infos",
-          "position": 6,
+          "position": 5,
           "sourceData": ""
         },
         "isdone": {
@@ -342,7 +342,7 @@
           "label": "Isdone",
           "labelTextSize": "0.875rem",
           "originalIdentifier": "isdone",
-          "position": 9,
+          "position": 8,
           "sourceData": true
         },
         "organ": {
@@ -364,7 +364,7 @@
           "label": "Organ",
           "labelTextSize": "0.875rem",
           "originalIdentifier": "organ",
-          "position": 4,
+          "position": 3,
           "sourceData": ""
         },
         "pr": {
@@ -386,7 +386,7 @@
           "label": "Pr",
           "labelTextSize": "0.875rem",
           "originalIdentifier": "pr",
-          "position": 2,
+          "position": 1,
           "sourceData": 1
         },
         "site_web": {
@@ -408,7 +408,7 @@
           "label": "Site Web",
           "labelTextSize": "0.875rem",
           "originalIdentifier": "site_web",
-          "position": 7,
+          "position": 6,
           "sourceData": ""
         },
         "todo": {
@@ -419,7 +419,7 @@
           "children": {},
           "dataType": "string",
           "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.todo))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
-          "fieldType": "Multiline Text Input",
+          "fieldType": "Text Input",
           "iconAlign": "left",
           "identifier": "todo",
           "isCustomField": false,
@@ -430,7 +430,7 @@
           "label": "Todo",
           "labelTextSize": "0.875rem",
           "originalIdentifier": "todo",
-          "position": 5,
+          "position": 4,
           "sourceData": ""
         }
       },

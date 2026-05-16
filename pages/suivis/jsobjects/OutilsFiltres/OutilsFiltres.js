@@ -8,9 +8,9 @@ export default {
     let donneesFiltrees = SelectQuery.data.filter(row => {
       const okOrgan = !organismeChoisi || row.organ === organismeChoisi;
       const okSearch = !rechercheTexte || 
-                       row.organ.toLowerCase().includes(rechercheTexte) || 
-                       row.titre.toLowerCase().includes(rechercheTexte);
-      const okStatus = !modeTodoSeulement || row.isdone === false;
+                 row.organ?.toLowerCase().includes(rechercheTexte) || 
+                 row.titre?.toLowerCase().includes(rechercheTexte);
+      const okStatus = !modeTodoSeulement || row.isdone === false || row.isdone === null || row.isdone === "false";
 
       return okOrgan && okSearch && okStatus;
     });

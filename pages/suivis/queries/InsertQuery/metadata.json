@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "INSERT INTO public.\"todo\" (\n\t\"organ\",\n\t\"pr\",\n\t\"dat_hre\",\n\t\"todo\",\n\t\"infos\",\n\t\"site_web\",\n\t\"email\",\n\t\"isdone\")\nVALUES (\n\t'{{insert_form.formData.organ}}',\n\t'{{insert_form.formData.pr}}',\n\t'{{insert_form.formData.dat_hre}}',\n\t'{{insert_form.formData.todo}}',\n\t'{{insert_form.formData.infos}}',\n\t'{{insert_form.formData.site_web}}',\n\t'{{insert_form.formData.email}}',\n\t'{{insert_form.formData.isdone}}');",
+      "body": "INSERT INTO public.\"todo\" (\n    \"organ\",\n    \"pr\",\n    \"dat_hre\",\n    \"todo\",\n    \"infos\",\n    \"site_web\",\n    \"email\",\n    \"isdone\"\n)\nVALUES (\n    {{ insert_form.formData.organ || null }},\n    {{ insert_form.formData.pr || 0 }},\n    {{ insert_form.formData.dat_hre || null }},\n    {{ insert_form.formData.todo || null }},\n    {{ insert_form.formData.infos || null }},\n    {{ insert_form.formData.site_web || null }},\n    {{ insert_form.formData.email || null }},\n    {{ insert_form.formData.isdone || false }}\n);",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
