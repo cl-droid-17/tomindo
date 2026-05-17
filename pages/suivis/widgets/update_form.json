@@ -134,9 +134,6 @@
       "key": "schema.__root_schema__.children.pr.accentColor"
     },
     {
-      "key": "schema.__root_schema__.children.dat_hre.defaultValue"
-    },
-    {
       "key": "schema.__root_schema__.children.dat_hre.borderRadius"
     },
     {
@@ -192,6 +189,9 @@
     },
     {
       "key": "schema.__root_schema__.children.isdone.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.dat_hre.defaultValue"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -261,10 +261,10 @@
           "boxShadow": "none",
           "children": {},
           "closeOnSelection": false,
-          "convertToISO": false,
+          "convertToISO": true,
           "dataType": "string",
           "dateFormat": "DD/MM/YYYY HH:mm",
-          "defaultValue": "{{((sourceData, formData, fieldState) => ( data_table.selectedRow.dat_hre ? moment(data_table.selectedRow.dat_hre).set({ hour: moment().hour(), minute: moment().minute() }).format() : moment() ))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
+          "defaultValue": "{{((sourceData, formData, fieldState) => ( data_table.selectedRow.dat_hre ))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
           "fieldType": "Datepicker",
           "identifier": "dat_hre",
           "isCustomField": false,
@@ -311,7 +311,7 @@
           "children": {},
           "dataType": "string",
           "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.infos))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
-          "fieldType": "Text Input",
+          "fieldType": "Multiline Text Input",
           "iconAlign": "left",
           "identifier": "infos",
           "isCustomField": false,
@@ -419,7 +419,7 @@
           "children": {},
           "dataType": "string",
           "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.todo))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
-          "fieldType": "Text Input",
+          "fieldType": "Multiline Text Input",
           "iconAlign": "left",
           "identifier": "todo",
           "isCustomField": false,

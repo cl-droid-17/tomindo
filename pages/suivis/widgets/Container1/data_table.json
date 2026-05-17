@@ -24,13 +24,13 @@
   "columnOrder": [
     "id",
     "pr",
+    "isdone",
     "dat_hre",
     "organ",
     "todo",
     "infos",
     "site_web",
     "email",
-    "isdone",
     "customColumn1"
   ],
   "columnSizeMap": {
@@ -38,13 +38,13 @@
     "step": 62,
     "task": 245
   },
-  "columnUpdatedAt": 1778964528098,
+  "columnUpdatedAt": 1779021508975,
   "columnWidthMap": {
     "dat_hre": 141,
     "id": 60,
     "infos": 390,
-    "isdone": 195,
-    "organ": 98,
+    "isdone": 64,
+    "organ": 167,
     "pr": 60,
     "todo": 384
   },
